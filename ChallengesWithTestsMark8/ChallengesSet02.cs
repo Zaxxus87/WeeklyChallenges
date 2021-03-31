@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace ChallengesWithTestsMark8
@@ -27,32 +28,58 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+                return 0;
+            if (numbers.Count() == 0)
+                return 0;
+            if (numbers.Count() == 1)
+                return numbers.Min();
+            double smallest = numbers.Min();
+            double largest = numbers.Max();
+            return smallest + largest;
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            if (str1.Length < str2.Length)
+                return str1.Length;
+            return str2.Length;
         }
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+                return 0;
+            return numbers.Sum();
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+                return 0;
+            int sum = 0;
+            foreach (int num in numbers)
+                if (Math.Abs(num) % 2 == 0)
+                    sum += num;
+            return sum;
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+                return false;
+            var sum = numbers.Sum();
+            return (Math.Abs(sum) % 2 == 1);
+               
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            long count = 0;
+            for (int i = 1; i < number; i++)
+                if (i % 2 == 1)
+                    count++;
+            return count;
         }
     }
 }
