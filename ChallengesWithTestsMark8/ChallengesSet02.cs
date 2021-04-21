@@ -32,8 +32,6 @@ namespace ChallengesWithTestsMark8
                 return 0;
             if (numbers.Count() == 0)
                 return 0;
-            if (numbers.Count() == 1)
-                return numbers.Min();
             double smallest = numbers.Min();
             double largest = numbers.Max();
             return smallest + largest;
