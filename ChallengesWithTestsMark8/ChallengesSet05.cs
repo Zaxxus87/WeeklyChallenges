@@ -7,7 +7,16 @@ namespace ChallengesWithTestsMark8
     {
         public int GetNextNumberDivisibleByN(int startNumber, int n)
         {
-            throw new NotImplementedException();
+            int ans = startNumber+1;
+            
+            while(ans > 0)
+            {
+                if (ans % n == 0)
+                    return ans;
+                else
+                    ans++;
+            }
+            return ans;
         }
 
         public void ChangeNamesOfBusinessesWithNoRevenueTo_CLOSED(Business[] businesses)

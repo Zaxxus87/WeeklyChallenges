@@ -77,6 +77,7 @@ namespace ChallengesWithTestsMark8
 
         public double AverageEvens(int[] numbers)
         {
+
             if(numbers == null || numbers.Length == 0)
                 return 0;
             var evens = numbers.Where(x => Math.Abs(x) % 2 == 0);
@@ -87,9 +88,11 @@ namespace ChallengesWithTestsMark8
 
         public int Factorial(int number)
         {
+            if (number < 0)
+                throw new ArgumentOutOfRangeException();
             int ans = 1;
             for (int i = 2; i <= number; i++)
-                ans *= 2;
+                ans *= i;
             return ans;
 
         }
